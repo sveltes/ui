@@ -1,0 +1,293 @@
+/* ============================
+            Base
+   ============================ */
+
+$color-base: #fff !default;
+
+/* ------- foreground colors ------- */
+
+$white: #fff !default;
+$dark: #000 !default;
+
+$primary: #007adf !default; // 0, 122, 223
+$green: #00b08c !default; // 0, 176, 140
+$red: #f55959 !default; // 245, 89, 89
+$yellow: #faab4d !default; // 250, 171, 77
+$violet: #ac64f1 !default;
+
+$light: darken($color-base, 20%) !default; // #ccc    204, 204, 204
+$gray: darken($color-base, 45%) !default; // #8c8c8c 140, 140, 140
+$black: darken($color-base, 80%) !default; // #333    51, 51, 51
+
+/* ------- background color ------- */
+
+$color-bg: darken($color-base, 4%) !default; // #f5f5f5 245
+$color-bg-hover: darken($color-base, 2%) !default; // #fafafa 250
+$color-bg-normal: darken($color-base, 6%) !default; // #f0f0f0 240
+$color-bg-disabled: darken($color-base, 8%) !default; // #ebebeb 235
+$color-border: darken($color-base, 8%) !default; // #ebebeb 235
+
+$color-primary-border: #0067bc !default;
+
+$border: 1px solid $color-border;
+
+/* ------- font ------- */
+
+$font-size: 14px !default;
+$line-height: 1.72 !default; // 14px -> line-height 24px
+$font-family: -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, Helvetica Neue,
+  Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei UI,
+  Microsoft YaHei, Source Han Sans CN, sans-serif !default;
+
+/* ------- other ------- */
+
+$radius: 4px !default;
+$shadow: 0 2px 4px 0 rgba($dark, 0.1) !default;
+$transition-duration: 0.2s !default;
+
+$small-width: 568px;
+$middle-width: 768px;
+$normal-width: 1300px;
+
+@mixin phone {
+  @media screen and (max-width: $small-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $middle-width) {
+    @content;
+  }
+}
+
+/* ============================
+            Components
+   ============================ */
+
+$icon-info: "\eb1d" !default;
+$icon-warn: "\eb07" !default;
+$icon-success: "\eb09" !default;
+$icon-times: "\eb0b" !default;
+$icon-angle-down: "\eb3f" !default;
+$icon-angle-up: "\eb3c" !default;
+$icon-angle-right: "\eb3d" !default;
+
+$icon-caret-right: "\eb36" !default;
+$icon-caret-down: "\eb37" !default;
+
+$icon-correct: "\eb31" !default;
+
+/* ------- Form ------- */
+
+/* Basic */
+$form-gap: 22px !default; // form group margin bottom
+
+/* Label */
+$form-label-width: 114px !default;
+$form-label-margin: 8px !default;
+$form-label-color: $gray !default;
+
+/* Form control */
+$form-control-height: 34px !default;
+$form-control-width: 322px !default;
+$form-control-radius: $radius !default;
+$form-control-padding-h: 12px !default;
+$form-control-padding-v: 4px !default;
+
+$form-placeholder-color: $light !default;
+
+$form-control-border-color: $color-border !default;
+$form-control-border-disable-color: rgba($light, 0.6) !default;
+
+$form-control-icon-color: $gray !default;
+
+$form-control-error-color: $red !default;
+$form-control-error-left: 0 !default;
+$form-control-error-shadow: 0 0 0 3px rgba($red, 0.1) !default;
+
+$form-control-active-shadow: 0 0 0 3px rgba($primary, 0.1) !default;
+
+$form-control-disable-color: $black !default;
+$form-control-disable-bg: $color-bg-disabled !default;
+
+/* ------- Button ------- */
+$button-height: 34px !default;
+$button-padding: 24px !default;
+
+$button-small-height: 26px !default;
+$button-small-padding: 8px !default;
+
+$button-color: $black !default;
+$button-font-weight: 400 !default;
+
+$button-font-size: 14px !default;
+$button-small-font-size: 12px !default;
+
+$button-radius: $radius !default;
+
+$button-border-color: $light !default;
+$button-border-width: 1px !default;
+$button-border-type: solid !default;
+
+$button-hover: $color-bg-hover !default;
+$button-disable: $color-bg-disabled !default;
+
+/* ------- Checkbox ------- */
+$checkbox-icon: "\eb34" !default;
+$checkbox-checked-icon: "\eb35" !default;
+$checkbox-indeterminate-icon: "\eb33" !default;
+
+$radio-icon: "\eb0e" !default;
+$radio-checked-icon: "\eb11" !default;
+
+/* ------- Pagination ------- */
+
+$page-height: 36px !default;
+$page-height-small: 26px !default;
+
+/* ------- Grid ------- */
+
+$grid-gap: 16px !default;
+
+/* ------- Menu ------- */
+
+$menu-wrap-padding: 8px !default;
+$menu-wrap-radius: 8px !default;
+
+$menu-height: 32px !default;
+$menu-padding: 16px !default;
+
+/* ------- Tab ------- */
+
+$tab-height: 24px !default;
+$tab-small-height: 32px !default;
+
+$tab-font-size: 18px !default;
+$tab-font-weight: 400 !default;
+$tab-small-font-size: 14px !default;
+
+$tab-border: $light !default;
+$tab-padding: 16px;
+
+$tab-color: $black !default;
+
+/* ------- Table ------- */
+
+$table-head-height: 40px !default;
+$table-padding-h: 16px !default;
+$table-padding-v: 16px !default;
+$table-small-padding-v: 12px !default;
+
+/* ------- Tag ------- */
+
+$tag-height: 20px !default;
+$tag-padding: 5px !default;
+$tag-max-width: 308px !default;
+$tag-radius: 3px !default;
+$tag-font-size: 12px !default;
+
+/* ------- popup ------- */
+
+$popup-radius: 8px;
+$popup-padding: 16px;
+
+$tooltip-radius: 8px !default;
+$tooltip-padding: 16px !default;
+
+/* ------- List ------- */
+
+$list-padding: 8px !default;
+$list-small-padding: 4px !default;
+
+/* ------- Select ------- */
+
+$select-drop-height: 276px !default;
+$select-icon: $icon-angle-down !default;
+$select-icon-size: 16px !default;
+
+/* ------- Switch ------- */
+
+$switch-height: 20px !default;
+$switch-width: 32px !default;
+$switch-padding: 2px !default;
+
+$switch-bg: $light !default;
+$switch-disable-bg: $color-border !default;
+$switch-disable-btn-bg: $light !default;
+
+/* ------- Alert ------- */
+
+$alert-radius: 8px !default;
+$alert-color: $black !default;
+
+$alert-success-border-color: #a0e3d5 !default;
+$alert-success-bg: #ecfcf8 !default;
+$alert-success-icon: $icon-success !default;
+
+$alert-warn-border-color: #ffd9ac !default;
+$alert-warn-bg: #fff7ed !default;
+$alert-warn-icon: $icon-info !default;
+
+/* ------- Notice ------- */
+$notice-font-size: 12px !default;
+
+$notice-border-color: #c9e2f6 !default;
+$notice-bg: #f2f9ff !default;
+
+$notice-warn-border-color: #ffd9ac !default;
+$notice-warn-bg: #fff7ed !default;
+
+$notice-error-border-color: #ffcfcf !default;
+$notice-error-bg: #ffeded !default;
+
+$notice-radius: 8px !default;
+$notice-icon: $icon-info !default;
+$notice-error-icon: $icon-warn !default;
+
+/* ------- Transfer -------*/
+
+$transfer-hover-color: #f4f8fc !default;
+
+/* ------- Range -------*/
+
+$range-height: 4px !default;
+$range-width: 180px !default;
+$range-btn-size: 16px !default;
+
+$section-range-height: 32px;
+$section-range-thumb-color: #3376ff;
+$section-range-value-color: #78a5ff;
+
+/* ------- Color Picker -------*/
+
+$picker-radius: 8px !default;
+
+/* ------- Upload -------*/
+$upload-single-size: 126px !default;
+
+/* ------- Steps -------*/
+$steps-icon: "\eb1f" !default;
+$steps-icon-size: 20px !default;
+
+/* ------- Dropdown -------*/
+$drop-icon: $icon-angle-down !default;
+$drop-icon-color: $gray !default;
+
+/* ------- Modal -------*/
+$modal-radius: 8px !default;
+$modal-max-width: 95% !default;
+$modal-min-height: 200px !default;
+
+$modal-width: auto !default;
+$modal-close-icon: $icon-times !default;
+
+$modal-handheld-footer-height: 56px !default;
+
+/* ------- Nav -------*/
+$nav-width: 164px !default;
+$nav-height: 630px !default;
+$nav-padding: 16px 8px !default;
+
+$nav-item-height: 40px !default;
+$nav-item-hover: #f2f9ff !default;
